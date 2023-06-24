@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="index.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        data-controller="weather-widget"
+        data-weather-widget-url-value="http://api.weatherapi.com/v1/current.json"
+        class="weather-widget"
+      >
+        <div
+          data-weather-widget-target="spinner"
+          class="weather-widget__spinner"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#fff"
+          >
+            <style>
+              .spinner_ajPY {
+                transform-origin: center;
+                animation: spinner_AtaB 0.75s infinite linear;
+              }
+              @keyframes spinner_AtaB {
+                100% {
+                  transform: rotate(360deg);
+                }
+              }
+            </style>
+            <path
+              d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+              opacity=".25"
+            />
+            <path
+              d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z"
+              class="spinner_ajPY"
+            />
+          </svg>
+        </div>
+        <input
+          data-action="keydown->weather-widget#getWeather"
+          data-weather-widget-target="query"
+          class="weather-widget__location"
+          value="London"
+        />
+        <span
+          data-weather-widget-target="error"
+          class="weather-widget__error-message"
+          >Что-то пошло не так</span
+        >
+        <div data-weather-widget-target="weather" class="weather-widget__body">
+          <div class="weather-widget__image">
+            <img data-weather-widget-target="img"
+            src="/static/img/daytime/partlycloudy.svg" alt="weather icon"
+            width="200" height=200" />
+          </div>
+          <div class="weather-widget__temp temp">
+            <span data-weather-widget-target="temp" class="temp__temp"
+              >20<span class="weather-widget__unit">°C</span></span
+            >
+            <span data-weather-widget-target="type" class="temp__info"
+              >sunny</span
+            >
+          </div>
+          <ul class="weather-widget__info info">
+            <li class="info__item">
+              <span class="info__name">Wind</span>
+              <span class="info__value">
+                <span data-weather-widget-target="wind" class="info__value"
+                  >5.8</span
+                >
+                <span class="weather-widget__unit">km/h</span></span
+              >
+            </li>
+            <li class="info__item">
+              <span class="info__name">Humidity</span>
+              <span class="info__value"
+                ><span data-weather-widget-target="humidity">67</span>%</span
+              >
+            </li>
+            <li class="info__item">
+              <span class="info__name">Feels like</span>
+              <span class="info__value">
+                <span data-weather-widget-target="feelslike">1</span
+                ><span class="weather-widget__unit">°C</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
