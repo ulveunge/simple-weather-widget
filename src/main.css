@@ -205,7 +205,7 @@ legend {
   row-gap: 5px;
 }
 
-.temp__temp {
+.temp__value {
   font-size: 60px;
   font-weight: bold;
 }

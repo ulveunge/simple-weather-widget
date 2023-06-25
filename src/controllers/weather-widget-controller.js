@@ -15,7 +15,7 @@ export default class extends Controller {
     "feelslike",
   ];
 
-  apiKey = "69e5a1e67d0742ba9b690731232406";
+  apiKey = "e67afff5c8d949a4a36193351232406";
 
   conditions = [
     "clear",
